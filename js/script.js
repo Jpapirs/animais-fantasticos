@@ -1,4 +1,4 @@
-import acordionList from "./modules/accordionList.js";
+import Accordion from "./modules/accordionList.js";
 import initModal from "./modules/modal.js";
 import initToolTip from "./modules/ToolTip.js";
 import initDropDownMenu from "./modules/MenuDropDown.js";
@@ -8,7 +8,9 @@ import initFuncionamento from "./modules/funcionamento.js";
 import intFetchAnimais from "./modules/animaisFecth.js";
 import initFetchBTC from "./modules/btcFecth.js";
 
-acordionList();
+const accordion = new Accordion(".js-accordion dt");
+accordion.init();
+
 initModal();
 initToolTip();
 initDropDownMenu();
