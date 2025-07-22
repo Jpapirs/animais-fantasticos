@@ -21,7 +21,6 @@ modal.init();
 const tooltip = new ToolTip("[data-tooltip]");
 tooltip.init();
 
-
 initDropDownMenu();
 initMenuMobile();
 initAnimaScroll();

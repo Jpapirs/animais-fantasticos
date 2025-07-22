@@ -12,7 +12,7 @@ export default class ToolTip {
     if (event.pageX + 240 > window.innerWidth) {
       this.tooltipBox.style.left = `${event.pageX - 190} px`;
     } else {
-      this.tooltipBox.style.left = `${event.pageX + 20} px`;
+      this.tooltipBox.style.left = `${event.pageX + 20}px`;
     }
   }
   //* Vai remover a tooltip
