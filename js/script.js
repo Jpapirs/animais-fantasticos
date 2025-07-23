@@ -3,7 +3,7 @@ import Modal from "./modules/modal.js";
 import ToolTip from "./modules/ToolTip.js";
 import initDropDownMenu from "./modules/MenuDropDown.js";
 import initMenuMobile from "./modules/menu-mobile.js";
-import initAnimaScroll from "./modules/scroll-animation.js";
+import ScrollAnima from "./modules/scrollAnima.js";
 import initFuncionamento from "./modules/funcionamento.js";
 import intFetchAnimais from "./modules/animaisFecth.js";
 import initFetchBTC from "./modules/btcFecth.js";
@@ -20,10 +20,13 @@ modal.init();
 
 const tooltip = new ToolTip("[data-tooltip]");
 tooltip.init();
+tooltip.init();
+
+const scroll = new ScrollAnima('.js-animation');
+scroll.init();
 
 initDropDownMenu();
 initMenuMobile();
-initAnimaScroll();
 initFuncionamento();
 intFetchAnimais();
 initFetchBTC();
