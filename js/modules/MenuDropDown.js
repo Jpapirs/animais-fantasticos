@@ -1,25 +1,35 @@
 import outSideClick from "./outsideclick.js";
 
-export default function initDropDownMenu() {}
+export default class DropDownMenu {
+  constructor(dropdownmenus, events) {
+    this.dropdownmenus = document.querySelectorAll(dropdownmenus);
+    this.activeClass = "active";
+    //* Defina touchstart e click como argumento padrão de events caso o usuario não defina
+    if (events === undefined) this.events = ["touchstart", "click"];
+    else this.events = events;
 
-const dropdownmenus = document.querySelectorAll("[data-dropdown]");
-
-dropdownmenus.forEach((item) => {
-  ["touchstart", "click"].forEach((userevent) => {
-    item.addEventListener(userevent, handleclick);
-  });
-});
-
-function handleclick(event) {
-  event.preventDefault();
-  this.classList.add("active");
-  outSideClick(this, ["touchstart", "click"], () => {
-    this.classList.remove("active");
-  });
+    this.activeDropDownMenu = this.activeDropDownMenu.bind(this);
+  }
+  //* Ativa o dropdownMenu e adiciona a função que observa o click fora dele
+  activeDropDownMenu(event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    element.classList.add(this.activeClass);
+    outSideClick(element, this.activeClass, () => {
+      element.classList.remove(this.activeClass);
+    });
+  }
+  //* Adiciona os eventos ao dropdownMenu
+  addDropDownMenuEvent() {
+    this.dropdownmenus.forEach((item) => {
+      this.events.forEach((userevent) => {
+        item.addEventListener(userevent, this.activeDropDownMenu);
+      });
+    });
+  }
+  init() {
+    if (this.addDropDownMenuEvent.length) this.addDropDownMenuEvent();
+    return this;
+  }
 }
 
-/*
-Selecionei o menu;
-Coloquei um .foreach nele e para que se por acaso alguem tocar(mobile) ou clicar nele, ele fique na tela e, quando alguem clicar nele de novo, saia.
-Gostaria de ressaltar que usei array para fazer os eventos, nem sabia que isso era possivel!!!
-*/

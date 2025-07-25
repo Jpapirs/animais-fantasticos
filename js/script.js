@@ -1,7 +1,7 @@
 import Accordion from "./modules/accordionList.js";
 import Modal from "./modules/modal.js";
 import ToolTip from "./modules/ToolTip.js";
-import initDropDownMenu from "./modules/MenuDropDown.js";
+import DropDownMenu from "./modules/MenuDropDown.js";
 import initMenuMobile from "./modules/menu-mobile.js";
 import ScrollAnima from "./modules/scrollAnima.js";
 import initFuncionamento from "./modules/funcionamento.js";
@@ -22,10 +22,12 @@ const tooltip = new ToolTip("[data-tooltip]");
 tooltip.init();
 tooltip.init();
 
-const scroll = new ScrollAnima('.js-animation');
+const scroll = new ScrollAnima(".js-animation");
 scroll.init();
 
-initDropDownMenu();
+const dropDownMenu = new DropDownMenu("[data-dropdown]");
+dropDownMenu.init();
+
 initMenuMobile();
 initFuncionamento();
 intFetchAnimais();
