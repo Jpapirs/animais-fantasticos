@@ -4,9 +4,9 @@ import ToolTip from "./modules/ToolTip.js";
 import DropDownMenu from "./modules/MenuDropDown.js";
 import MenuMobile from "./modules/menu-mobile.js";
 import ScrollAnima from "./modules/scrollAnima.js";
-import initFuncionamento from "./modules/funcionamento.js";
 import intFetchAnimais from "./modules/animaisFecth.js";
 import initFetchBTC from "./modules/btcFecth.js";
+import Funcionamento from "./modules/funcionamento.js";
 
 const accordion = new Accordion(".js-accordion dt");
 accordion.init();
@@ -35,6 +35,8 @@ const menuMobile = new MenuMobile(
 //* Lembrando que não é necessario usar o .init(), você pode ativa-lo no contructor da class
 menuMobile.init();
 
-initFuncionamento();
+const funcionamento = new Funcionamento("[data-semana]", "aberto");
+funcionamento.init();
+
 intFetchAnimais();
 initFetchBTC();

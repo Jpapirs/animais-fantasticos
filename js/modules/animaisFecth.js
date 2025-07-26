@@ -10,7 +10,7 @@ export default function intFetchAnimais() {
       numerosGrid.appendChild(divAnimal);
     });
   }
-  const animaNumeros = new AnimaNumeros(".numeros", ".numeros-grid", "ativo");
+  const animaNumeros = new AnimaNumeros("[data-numero]", ".numeros", "ativo");
   animaNumeros.init();
   fetchAnimais("./animaisapi.json");
   function createAnimal(animal) {
