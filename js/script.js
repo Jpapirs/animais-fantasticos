@@ -7,6 +7,7 @@ import ScrollAnima from "./modules/scrollAnima.js";
 import intFetchAnimais from "./modules/animaisFecth.js";
 import initFetchBTC from "./modules/btcFecth.js";
 import Funcionamento from "./modules/funcionamento.js";
+import SlideNav from "./modules/slide.js";
 
 const accordion = new Accordion(".js-accordion dt");
 accordion.init();
@@ -37,6 +38,11 @@ menuMobile.init();
 
 const funcionamento = new Funcionamento("[data-semana]", "aberto");
 funcionamento.init();
+
+const slide = new SlideNav(".slide", ".slide-wrapper");
+slide.init();
+slide.addControl(".custom-control");
+
 
 intFetchAnimais();
 initFetchBTC();
