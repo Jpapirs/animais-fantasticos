@@ -2,9 +2,7 @@
   position: relative;
 }
 
-[data-dropdown] .dropdown-menu {
-  display: none;
-}
+
 [data-dropdown]:hover .dropdown-menu,
 [data-dropdown].active .dropdown-menu {
   display: block;
@@ -48,4 +46,14 @@
   &:hover {
     color: white;
   }
+}
+[data-dropdown] .dropdown-menu {
+display: none;
+}
+
+@media (max-width: 700px){
+  [data-dropdown] .dropdown-menu {
+  display: block;
+  animation: show-up .3s forwards;
+}
 }
